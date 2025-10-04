@@ -1,2 +1,8 @@
-package org.aman.shardedsagawallet.services;public interface UserService {
+package org.aman.shardedsagawallet.services;
+
+import org.aman.shardedsagawallet.entities.User;
+
+public interface UserService {
+
+    User createUser(User user);
 }
