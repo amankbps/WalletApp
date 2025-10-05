@@ -6,14 +6,14 @@ import org.aman.shardedsagawallet.entities.Transaction;
 import org.aman.shardedsagawallet.entities.TransactionStatus;
 import org.aman.shardedsagawallet.repositories.TransactionRepository;
 import org.aman.shardedsagawallet.services.saga.SagaContext;
-import org.aman.shardedsagawallet.services.saga.SagaStep;
+import org.aman.shardedsagawallet.services.saga.SagaStepInterface;
 import org.springframework.stereotype.Service;
 
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UpdateTransactionStatus implements SagaStep {
+public class UpdateTransactionStatus implements SagaStepInterface {
 
     private final TransactionRepository transactionRepository;
 
@@ -57,6 +57,6 @@ public class UpdateTransactionStatus implements SagaStep {
 
     @Override
     public String getStepName() {
-        return "UpdateTransactionStatus";
+        return SagaStepFactory.SagaStepType.UPDATE_TRANSACTION_STATUS_STEP.toString();
     }
 }

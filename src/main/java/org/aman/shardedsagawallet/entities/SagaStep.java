@@ -3,12 +3,14 @@ package org.aman.shardedsagawallet.entities;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.calcite.model.JsonType;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="saga_step")

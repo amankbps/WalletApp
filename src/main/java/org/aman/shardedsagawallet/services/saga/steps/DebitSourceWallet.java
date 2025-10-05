@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.aman.shardedsagawallet.entities.Wallet;
 import org.aman.shardedsagawallet.repositories.WalletRepository;
 import org.aman.shardedsagawallet.services.saga.SagaContext;
-import org.aman.shardedsagawallet.services.saga.SagaStep;
+import org.aman.shardedsagawallet.services.saga.SagaStepInterface;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class DebitSourceWallet implements SagaStep {
+public class DebitSourceWallet implements SagaStepInterface {
 
     private final WalletRepository walletRepository;
 
@@ -69,6 +69,6 @@ public class DebitSourceWallet implements SagaStep {
 
     @Override
     public String getStepName() {
-        return "DebitSourceWallet";
+        return SagaStepFactory.SagaStepType.DEBIT_SOURCE_WALLET_STEP.toString();
     }
 }

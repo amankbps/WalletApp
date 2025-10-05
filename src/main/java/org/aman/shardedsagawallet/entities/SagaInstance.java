@@ -2,6 +2,7 @@ package org.aman.shardedsagawallet.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import org.apache.calcite.model.JsonType;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name="saga_instance")
 public class SagaInstance {
     @Id
@@ -29,7 +31,7 @@ public class SagaInstance {
     @Column(name="context",columnDefinition = "json")
     private String context;
 
-    @Column(name="current_step",nullable = false)
+    @Column(name="current_step")
     private String currentStep;
 
 
