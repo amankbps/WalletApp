@@ -3,6 +3,7 @@ package org.aman.shardedsagawallet.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="transaction")
@@ -39,6 +41,6 @@ public class Transaction {
     @Column(name="description",nullable = false)
     private String description;
 
-    @Column(name="saga_instance_id",nullable = false)
+    @Column(name="saga_instance_id")
     private Long sagaInstanceId;
 }
